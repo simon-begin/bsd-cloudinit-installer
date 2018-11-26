@@ -70,12 +70,6 @@ BSDINIT_URL="https://api.github.com/repos/pellaeon/bsd-cloudinit/tarball/$GIT_RE
 VERIFY_PEER='--ca-cert=/usr/local/share/certs/ca-root-nss.crt'
 FETCH="fetch ${VERIFY_PEER}"
 
-INSTALL_PKGS='
-	lang/python27
-	devel/py-virtualenv
-	security/sudo
-	security/ca_root_nss
-	'
 
 
 ##############################################
@@ -117,7 +111,6 @@ fi
 
 # Install our prerequisites
 export ASSUME_ALWAYS_YES=yes
-pkg install $INSTALL_PKGS
 
 [ ! `which python2.7` ] && {
 	echo 'python2.7 Not Found !'
